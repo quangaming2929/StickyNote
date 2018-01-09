@@ -25,8 +25,9 @@ namespace Sticky_Note
         private static extern bool ReleaseCapture();
         //
 
-        public Form1()
+        public Form1(object tag)
         {
+            Tag = tag;
             InitializeComponent();
             LoadCustomComponent();
             WriteLocation();
@@ -34,6 +35,8 @@ namespace Sticky_Note
         }
         void LoadCustomComponent()
         {
+            //Defalut Location
+            Location = new Point(100, 100);
             //Menu Strip
             fakeControl.BackColor = Color.Indigo;
             
@@ -53,6 +56,8 @@ namespace Sticky_Note
         }
         private void WriteLocation()
         {
+            if (Tag == null)
+                MessageBox.Show("Cant NULL!!!");
             FileStream saveFile = new FileStream(SharedIems.path + @"fileID" + Tag + ".dat", FileMode.Create);
             saveFile.Position = 0;
             string save = "Location: " + Location.X.ToString() + " , " + Location.Y.ToString();
@@ -74,7 +79,7 @@ namespace Sticky_Note
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            SharedIems.CreateNote();
         }
 
         private void txbInput_TextChanged(object sender, EventArgs e)
@@ -86,5 +91,6 @@ namespace Sticky_Note
         {
             MessageBox.Show("HIII");
         }
+
     }
 }

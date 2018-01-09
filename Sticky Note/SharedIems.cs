@@ -15,17 +15,13 @@ namespace Sticky_Note
         {
             if (openForm == 0)
             {
-                Form1 f = new Form1();
-                f.Show();
-                openForm++;
+                CreateNote();
             }
         }
         public static void CreateNote()
         {
-            Form1 newNote = new Form1();
+            Form1 newNote = new Form1(new Random().Next(1, 1000).ToString());
             newNote.Show();
-            object obj = new Random().Next(1, 100).ToString();
-            newNote.Tag = obj;
             openForm++;
         }
     }
