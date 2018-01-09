@@ -16,6 +16,7 @@ namespace Sticky_Note
         public Form1()
         {
             InitializeComponent();
+            //adafa
         }
     }
 }
