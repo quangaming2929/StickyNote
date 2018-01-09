@@ -24,16 +24,14 @@ namespace Sticky_Note
 
         private void MakeDir()
         {
-            Directory.CreateDirectory(path);
+            Directory.CreateDirectory(SharedIems.path);
         }
 
-        string path = @"C:\Stick Notes ReMake";
+       
 
         private void BackGroundForm_Load(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
-            f.Show();
-            SharedIems.openForm++;
+            SharedIems.CreateNote();
         }
         
     }

@@ -29,13 +29,14 @@ namespace Sticky_Note
         {
             InitializeComponent();
             LoadCustomComponent();
-
+            WriteLocation();
 
         }
         void LoadCustomComponent()
         {
             //Menu Strip
             fakeControl.BackColor = Color.Indigo;
+            
             //Item On Menu Strip
             xToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
             xToolStripMenuItem.ForeColor = Color.Orange;
@@ -48,25 +49,42 @@ namespace Sticky_Note
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+            WriteLocation();
         }
+        private void WriteLocation()
+        {
+            FileStream saveFile = new FileStream(SharedIems.path + @"fileID" + Tag + ".dat", FileMode.Create);
+            saveFile.Position = 0;
+            string save = "Location: " + Location.X.ToString() + " , " + Location.Y.ToString();
+            byte[] saveByte = Encoding.Default.GetBytes(save);
+            saveFile.Write(saveByte, 0, saveByte.Length);
 
+            saveFile.Close();
+        }
         private void xToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
-            SharedIems.openForm--;
-            SharedIems.ZeroForm();
+            var result = MessageBox.Show("Do you want to delete this note?", "Delete Note", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Close();
+                SharedIems.openForm--;
+                SharedIems.ZeroForm();
+            }
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form1 newNote = new Form1();
-            newNote.Show();
-            SharedIems.openForm++;
+            
         }
 
         private void txbInput_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("HIII");
         }
     }
 }

@@ -32,6 +32,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txbInput = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.fakeControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,12 +83,21 @@
             this.txbInput.TabIndex = 3;
             this.txbInput.TextChanged += new System.EventHandler(this.txbInput_TextChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(282, 263);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 10);
+            this.panel1.TabIndex = 4;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txbInput);
             this.Controls.Add(this.fakeControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -105,6 +115,7 @@
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.TextBox txbInput;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
