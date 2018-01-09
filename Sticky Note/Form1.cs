@@ -59,6 +59,7 @@ namespace Sticky_Note
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            //Wring
             Form1 newNote = new Form1();
             newNote.Show();
             SharedIems.openForm++;
