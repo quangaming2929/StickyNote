@@ -44,6 +44,7 @@
             this.xToolStripMenuItem});
             this.fakeControl.Location = new System.Drawing.Point(0, 0);
             this.fakeControl.Name = "fakeControl";
+            this.fakeControl.ShowItemToolTips = true;
             this.fakeControl.Size = new System.Drawing.Size(292, 24);
             this.fakeControl.TabIndex = 2;
             this.fakeControl.Text = "menuStrip1";
@@ -53,16 +54,20 @@
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
             this.toolStripMenuItem1.Text = "+";
+            this.toolStripMenuItem1.ToolTipText = "New Note (Ctrl+N)";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // xToolStripMenuItem
             // 
             this.xToolStripMenuItem.Font = new System.Drawing.Font("Oswald", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.xToolStripMenuItem.Size = new System.Drawing.Size(27, 20);
             this.xToolStripMenuItem.Text = "x";
+            this.xToolStripMenuItem.ToolTipText = "Delete Note (Ctrl+D)";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
             // txbInput
@@ -75,6 +80,7 @@
             this.txbInput.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txbInput.Size = new System.Drawing.Size(268, 234);
             this.txbInput.TabIndex = 3;
+            this.txbInput.TextChanged += new System.EventHandler(this.txbInput_TextChanged);
             // 
             // Form1
             // 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Sticky_Note
 {
@@ -18,7 +19,15 @@ namespace Sticky_Note
             this.Visible = false;
             ShowInTaskbar = false;
             Opacity = 0;
+            MakeDir();
         }
+
+        private void MakeDir()
+        {
+            Directory.CreateDirectory(path);
+        }
+
+        string path = @"C:\Stick Notes ReMake";
 
         private void BackGroundForm_Load(object sender, EventArgs e)
         {

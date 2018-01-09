@@ -30,6 +30,7 @@ namespace Sticky_Note
             InitializeComponent();
             LoadCustomComponent();
 
+
         }
         void LoadCustomComponent()
         {
@@ -38,10 +39,8 @@ namespace Sticky_Note
             //Item On Menu Strip
             xToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
             xToolStripMenuItem.ForeColor = Color.Orange;
-            
-
         }
-
+        
         private void fakeControl_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -63,6 +62,11 @@ namespace Sticky_Note
             Form1 newNote = new Form1();
             newNote.Show();
             SharedIems.openForm++;
+        }
+
+        private void txbInput_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
