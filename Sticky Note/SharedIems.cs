@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Sticky_Note
 {
@@ -29,6 +27,28 @@ namespace Sticky_Note
             Form1 newNote = new Form1(new Random().Next(1, 1000).ToString());
             newNote.Show();
             openForm++;
+        }
+        public static string GetInFile(int id, string mode)
+        {
+            
+            FileStream fs = new FileStream(path + @"fileID" + id + ".dat",FileMode.Open);
+            byte[] readByte = new byte[fs.Length];
+            for (int i = 0; i < fs.Length; i++)
+            {
+                readByte[i] = (byte)fs.ReadByte();
+            }
+            //Everything in the file is convert here
+            string result = Encoding.Default.GetString(readByte);
+            string[] sp = result.Split('\r');
+            string location = sp[0];
+            string size = sp[1].Substring(1);
+            if (mode == "Location")
+                return location;
+            else if (mode == "Size")
+                return size;
+
+            
+            return "";
         }
     }
 }

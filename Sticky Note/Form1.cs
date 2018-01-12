@@ -87,7 +87,7 @@ namespace Sticky_Note
         private void WriteSize()
         {
             FileStream saveFile = new FileStream(SharedIems.path + @"fileID" + Tag + ".dat", FileMode.Open);
-            saveFile.Position = saveFile.Length;
+            saveFile.Position = 21;
             string save = "Size: " + Size.Width.ToString() + " , " + Size.Height.ToString() + "\r\n";
             byte[] saveByte = Encoding.Default.GetBytes(save);
             saveFile.Write(saveByte, 0, saveByte.Length);
@@ -122,10 +122,6 @@ namespace Sticky_Note
             fs.Close();
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show("HIII");
-        }
 
         #region Resize On stack overflow
         // Again, I didnt code this
@@ -191,10 +187,19 @@ namespace Sticky_Note
         bool t = false;
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-            if(t)
-                MessageBox.Show("LOL Size changed bro");
-        }
+            if (t)
+            {
+                MessageBox.Show("sd");
+                WriteSize();
+                string sizeDetail = SharedIems.GetInFile(Convert.ToInt32(Tag) , "Size");
+                sizeDetail = sizeDetail.Substring(6);
+                string[] sp = sizeDetail.Split(',');
+                int x = Convert.ToInt32(sp[0].Trim());
+                int y = Convert.ToInt32(sp[1].Trim());
+                
+            }
 
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             t = true;

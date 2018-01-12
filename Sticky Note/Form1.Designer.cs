@@ -33,12 +33,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txbInput = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.fakeControl.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // fakeControl
@@ -89,30 +85,6 @@
             this.txbInput.TabIndex = 3;
             this.txbInput.TextChanged += new System.EventHandler(this.txbInput_TextChanged);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(282, 170);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 103);
-            this.panel1.TabIndex = 4;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(0, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 103);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 103);
-            this.panel3.TabIndex = 6;
-            // 
             // timer1
             // 
             this.timer1.Interval = 500;
@@ -124,7 +96,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(295, 276);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txbInput);
             this.Controls.Add(this.fakeControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -133,7 +104,6 @@
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.fakeControl.ResumeLayout(false);
             this.fakeControl.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,9 +114,6 @@
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.TextBox txbInput;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Timer timer1;
     }
 }

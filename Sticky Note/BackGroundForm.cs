@@ -16,7 +16,7 @@ namespace Sticky_Note
         public BackGroundForm()
         {
             InitializeComponent();
-            this.Visible = false;
+            Visible = false;
             ShowInTaskbar = false;
             Opacity = 0;
             MakeDir();
@@ -32,6 +32,7 @@ namespace Sticky_Note
         private void BackGroundForm_Load(object sender, EventArgs e)
         {
             SharedIems.CreateNote();
+            
         }
         
     }
